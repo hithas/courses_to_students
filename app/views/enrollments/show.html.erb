@@ -1,0 +1,13 @@
+<h1>Enrollment #<%= @enrollment.id %></h1>
+
+<div>
+  <strong>Student</strong>:<br />
+  <p><%= @enrollment.student_id %></p>
+</div>
+<div>
+  <strong>Course</strong>:<br />
+  <p><%= @enrollment.course_id %></p>
+</div>
+
+<a href="/enrollments/<%= @enrollment.id %>/edit">Edit</a> |
+<a href="/enrollments/<%= @enrollment.id %>/destroy">Destroy</a>

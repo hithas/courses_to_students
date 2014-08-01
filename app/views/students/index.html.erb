@@ -1,0 +1,13 @@
+<h1>Students</h1>
+
+<p><a href="/new_student">Add a New Student</a></p>
+
+  <% @students.each do |student| %>
+    <h2><%= student.name %> <small> <%= student.email %></small></h2>
+<a href="/students/<%= student.id %>">Show</a> |
+
+<a href="/students/<%= student.id %>/edit">Edit</a> |
+<a href="/students/<%= student.id %>/destroy">Destroy</a>
+  <% end %>
+
+

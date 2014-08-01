@@ -1,0 +1,29 @@
+<h1>Enrollments</h1>
+
+<p><a href="/new_enrollment">Add a New Enrollment</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>Course</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @enrollments.each do |enrollment| %>
+    <tr>
+      <td><%= enrollment.student_id %> | <%=Student.find_by(id: enrollment.student_id).name%></td>
+      <td><%= enrollment.course_id %> | <%=Course.find_by(id: enrollment.course_id).name%></td>
+          <td><a href="/enrollments/<%= enrollment.id %>">Show</a>
+        </td>
+      <td><a href="/enrollments/<%= enrollment.id %>/edit">Edit</a></td>
+      <td><a href="/enrollments/<%= enrollment.id %>/destroy">Destroy</a></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

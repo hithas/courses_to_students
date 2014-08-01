@@ -1,0 +1,23 @@
+<h1>Editing Student #<%= @student.id %></h1>
+
+<form action="/students/<%= @student.id %>/update">
+  <div>
+    <label for="name">name</label><br />
+    <input id="name" name="name" value="<%= @student.name  %>" type="text" />
+  </div>
+  <div>
+    <label for="email">email</label><br />
+    <input id="email" name="email" value="<%= @student.email  %>" type="text" />
+  </div>
+  <div>
+    <label> Courses </label>
+    <% @enrollments.each do |enrollment| %> 
+         <h4 ><%=enrollment.course.name%> <a href="/students/<%= @student.id %>/remove_course/<%= enrollment.course.id %>"> Remove </a> </h4>  
+    <% end %>
+  </div>
+  <div>
+    <input type="submit">
+  </div>
+</form>
+
+

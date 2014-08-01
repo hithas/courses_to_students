@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1><%= @student.name %> <small> <%= @student.email %></small></h1>
+        <h4>
+          Enrolled in:
+        </h4>
+        <div class="list-group">
+          <% @enrollments.each do |enrollment| %> 
+          <a href="/courses/<%=enrollment.course_id%>" class="list-group-item ">
+            <h4 class="list-group-item-heading"><%=enrollment.course.name%></h4>  
+          </a>
+          <% end %>
+      </div>
+    </div>
+      <a href="/students/<%= @student.id %>/edit">Edit</a> |
+<a href="/students/<%= @student.id %>/destroy">Destroy</a>
+  </div>
+
+  <h3> Add a new class: </h3>
+  <form action="/students/<%= @student.id %>/add_course">
+  <div>
+    <select name = "course_name">
+      <% Course.all.each do |course| %>
+      <option value="<%=course.name%>"><%=course.name%></option>
+      <%end%>
+    </select>
+    <input type="submit">
+  </div>
+  
+  </form>
+  

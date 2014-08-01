@@ -1,0 +1,17 @@
+<h1>Editing Enrollment #<%= @enrollment.id %></h1>
+
+<form action="/enrollments/<%= @enrollment.id %>/update">
+  <div>
+    <label for="student_id">student_id</label><br />
+    <input id="student_id" name="student_id" value="<%= @enrollment.student_id  %>" type="text" />
+  </div>
+  <div>
+    <label for="course_id">course_id</label><br />
+    <input id="course_id" name="course_id" value="<%= @enrollment.course_id  %>" type="text" />
+  </div>
+  <div>
+    <input type="submit">
+  </div>
+</form>
+
+
